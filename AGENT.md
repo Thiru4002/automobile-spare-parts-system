@@ -25,6 +25,56 @@ src/
 Pattern:
 Model → Controller → Route
 
+## Reference Projects
+
+Before implementing new code, review these repositories to understand coding conventions.
+
+Task Manager Backend:
+https://github.com/Thiru4002/task-manager-api
+
+Consent Management Backend:
+https://github.com/Thiru4002/secure-data-sharing-system-backend
+
+Use these repositories for:
+
+* Controller structure
+* Route organization
+* Response format
+* Middleware patterns
+* Error handling conventions
+
+If a reference repository conflicts with this project guide, follow `AGENT.md`.
+
+## Coding Style Consistency
+
+Reference repositories define the preferred coding style.
+
+Before implementing new features:
+
+1. Review the reference repositories.
+2. Identify coding patterns used in controllers, routes, middleware, and models.
+3. Compare existing code with the preferred patterns.
+4. Refactor existing code to match the reference style when appropriate.
+
+Examples:
+
+* Use the same controller structure.
+* Use the same destructuring patterns.
+* Use the same response format.
+* Use the same naming conventions.
+* Use the same error handling style.
+
+The agent may modify existing code to improve style consistency.
+
+Do not change:
+
+* Business rules
+* Validation rules
+* Database design
+* API behavior
+
+Only improve coding style and consistency.
+
 ## API Convention
 
 Base URL:
