@@ -1,6 +1,6 @@
 const Customer = require("../models/customer");
 
-exports.createCustomer = async (req, res) => {
+const createCustomer = async (req, res) => {
   try {
     const { name, phone, address, customerType } = req.body;
 
@@ -24,7 +24,7 @@ exports.createCustomer = async (req, res) => {
   }
 };
 
-exports.getAllCustomers = async (req, res) => {
+const getAllCustomers = async (req, res) => {
   try {
     const customers = await Customer.find();
 
@@ -41,7 +41,7 @@ exports.getAllCustomers = async (req, res) => {
   }
 };
 
-exports.getCustomerById = async (req, res) => {
+const getCustomerById = async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -66,7 +66,7 @@ exports.getCustomerById = async (req, res) => {
   }
 };
 
-exports.updateCustomer = async (req, res) => {
+const updateCustomer = async (req, res) => {
   try {
     const { id } = req.params;
     const { name, phone, address, customerType } = req.body;
@@ -102,7 +102,7 @@ exports.updateCustomer = async (req, res) => {
   }
 };
 
-exports.deleteCustomer = async (req, res) => {
+const deleteCustomer = async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -125,4 +125,12 @@ exports.deleteCustomer = async (req, res) => {
       message: error.message,
     });
   }
+};
+
+module.exports = {
+  createCustomer,
+  getAllCustomers,
+  getCustomerById,
+  updateCustomer,
+  deleteCustomer,
 };

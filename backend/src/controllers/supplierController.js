@@ -1,6 +1,6 @@
 const Supplier = require("../models/supplier");
 
-exports.createSupplier = async (req, res) => {
+const createSupplier = async (req, res) => {
   try {
     const { name, phone, address } = req.body;
 
@@ -23,7 +23,7 @@ exports.createSupplier = async (req, res) => {
   }
 };
 
-exports.getAllSuppliers = async (req, res) => {
+const getAllSuppliers = async (req, res) => {
   try {
     const suppliers = await Supplier.find();
 
@@ -40,7 +40,7 @@ exports.getAllSuppliers = async (req, res) => {
   }
 };
 
-exports.getSupplierById = async (req, res) => {
+const getSupplierById = async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -65,7 +65,7 @@ exports.getSupplierById = async (req, res) => {
   }
 };
 
-exports.updateSupplier = async (req, res) => {
+const updateSupplier = async (req, res) => {
   try {
     const { id } = req.params;
     const { name, phone, address } = req.body;
@@ -100,7 +100,7 @@ exports.updateSupplier = async (req, res) => {
   }
 };
 
-exports.deleteSupplier = async (req, res) => {
+const deleteSupplier = async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -123,4 +123,12 @@ exports.deleteSupplier = async (req, res) => {
       message: error.message,
     });
   }
+};
+
+module.exports = {
+  createSupplier,
+  getAllSuppliers,
+  getSupplierById,
+  updateSupplier,
+  deleteSupplier,
 };

@@ -419,3 +419,56 @@ node -e "require('./src/app'); console.log('app loaded')"
 ### Next recommended task
 
 * Start Milestone 3 - Product Management after approval.
+
+## Completed: Aligned Master Data Route and Controller Structure
+
+### Files created
+
+* None
+
+### Files modified
+
+* `backend/src/controllers/categoryController.js`
+* `backend/src/controllers/brandController.js`
+* `backend/src/controllers/supplierController.js`
+* `backend/src/controllers/customerController.js`
+* `backend/src/routes/categoryRoutes.js`
+* `backend/src/routes/brandRoutes.js`
+* `backend/src/routes/supplierRoutes.js`
+* `backend/src/routes/customerRoutes.js`
+* `PROJECT_PROGRESS.MD`
+
+### Routes added
+
+Reference-style update endpoints were added while keeping the existing `PUT` update endpoints:
+
+* `PATCH /api/v1/categories/:id`
+* `PATCH /api/v1/brands/:id`
+* `PATCH /api/v1/suppliers/:id`
+* `PATCH /api/v1/customers/:id`
+
+### Business rules implemented
+
+* No new business rules were added.
+* Existing Category, Brand, Supplier, and Customer business rules were preserved.
+
+### Important design decisions
+
+* Reviewed the local copies of the reference repositories listed in `AGENTS.md`.
+* Updated controller exports to define controller functions first and export them together with `module.exports`, matching the reference project style.
+* Updated route files to import controllers with short module aliases like `category`, `brand`, `supplier`, and `customer`.
+* Added `PATCH /:id` update routes because the reference projects use `PATCH` for updates.
+* Preserved existing `PUT /:id` update routes so current API behavior remains backward compatible.
+* Did not start Milestone 3 Product Management.
+
+### Verification
+
+* Loaded the Express app successfully using:
+
+```bash
+node -e "require('./src/app'); console.log('app loaded')"
+```
+
+### Next recommended task
+
+* Start Milestone 3 - Product Management after approval.

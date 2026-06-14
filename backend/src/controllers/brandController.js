@@ -1,6 +1,6 @@
 const Brand = require("../models/brand");
 
-exports.createBrand = async (req, res) => {
+const createBrand = async (req, res) => {
   try {
     const { name, description } = req.body;
 
@@ -22,7 +22,7 @@ exports.createBrand = async (req, res) => {
   }
 };
 
-exports.getAllBrands = async (req, res) => {
+const getAllBrands = async (req, res) => {
   try {
     const brands = await Brand.find();
 
@@ -39,7 +39,7 @@ exports.getAllBrands = async (req, res) => {
   }
 };
 
-exports.getBrandById = async (req, res) => {
+const getBrandById = async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -64,7 +64,7 @@ exports.getBrandById = async (req, res) => {
   }
 };
 
-exports.updateBrand = async (req, res) => {
+const updateBrand = async (req, res) => {
   try {
     const { id } = req.params;
     const { name, description } = req.body;
@@ -98,7 +98,7 @@ exports.updateBrand = async (req, res) => {
   }
 };
 
-exports.deleteBrand = async (req, res) => {
+const deleteBrand = async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -121,4 +121,12 @@ exports.deleteBrand = async (req, res) => {
       message: error.message,
     });
   }
+};
+
+module.exports = {
+  createBrand,
+  getAllBrands,
+  getBrandById,
+  updateBrand,
+  deleteBrand,
 };

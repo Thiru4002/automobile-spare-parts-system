@@ -1,6 +1,6 @@
 const Category = require("../models/category");
 
-exports.createCategory = async (req, res) => {
+const createCategory = async (req, res) => {
   try {
     const { name, description } = req.body;
 
@@ -22,7 +22,7 @@ exports.createCategory = async (req, res) => {
   }
 };
 
-exports.getAllCategories = async (req, res) => {
+const getAllCategories = async (req, res) => {
   try {
     const categories = await Category.find();
 
@@ -39,7 +39,7 @@ exports.getAllCategories = async (req, res) => {
   }
 };
 
-exports.getCategoryById = async (req, res) => {
+const getCategoryById = async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -64,7 +64,7 @@ exports.getCategoryById = async (req, res) => {
   }
 };
 
-exports.updateCategory = async (req, res) => {
+const updateCategory = async (req, res) => {
   try {
     const { id } = req.params;
     const { name, description } = req.body;
@@ -98,7 +98,7 @@ exports.updateCategory = async (req, res) => {
   }
 };
 
-exports.deleteCategory = async (req, res) => {
+const deleteCategory = async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -121,4 +121,12 @@ exports.deleteCategory = async (req, res) => {
       message: error.message,
     });
   }
+};
+
+module.exports = {
+  createCategory,
+  getAllCategories,
+  getCategoryById,
+  updateCategory,
+  deleteCategory,
 };
