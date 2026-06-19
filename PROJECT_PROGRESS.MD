@@ -63,3 +63,34 @@ Product validation rules:
 ```bash
 node -e "require('./src/app'); console.log('app loaded')"
 ```
+
+## Completed: Milestone 4 - Purchase Management
+
+### Files created
+* `backend/src/models/purchase.js`
+* `backend/src/controllers/purchaseController.js`
+* `backend/src/routes/purchaseRoutes.js`
+
+### Files modified
+* `backend/src/app.js`
+
+### Routes added
+Base route:
+* `/api/v1/purchases`
+
+Endpoints:
+* `POST /api/v1/purchases` - create a purchase and update stock
+* `GET /api/v1/purchases` - get all purchases
+* `GET /api/v1/purchases/:id` - get one purchase by id (with populated product/supplier)
+
+### Business rules implemented
+* Purchase increases stock
+* Quantity > 0
+* CostPrice > 0
+
+### Important design decisions
+* Followed the established project pattern: Model -> Controller -> Route.
+* Verified that the purchase updates the stock in the Product model correctly.
+
+### Verification
+* Loaded the Express app successfully.
