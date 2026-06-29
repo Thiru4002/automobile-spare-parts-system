@@ -94,3 +94,36 @@ Endpoints:
 
 ### Verification
 * Loaded the Express app successfully.
+
+## Completed: Milestone 5 - Billing
+
+### Files created
+* `backend/src/models/bill.js`
+* `backend/src/controllers/billController.js`
+* `backend/src/routes/billRoutes.js`
+
+### Files modified
+* `backend/src/app.js`
+
+### Routes added
+Base route:
+* `/api/v1/bills`
+
+Endpoints:
+* `POST /api/v1/bills` - create a bill (multiple products, updates stock)
+* `GET /api/v1/bills` - get all bills
+
+### Business rules implemented
+* Multiple line items per bill
+* Bill decreases stock
+* Stock check before billing
+* Store selling price at sale time
+* Stock cannot become negative
+
+### Important design decisions
+* Followed the established project pattern: Model -> Controller -> Route.
+* Used MongoDB transactions to ensure data consistency during bill creation and stock updates.
+* Verified that bill creation fails if any product has insufficient stock.
+
+### Verification
+* Loaded the Express app successfully.
